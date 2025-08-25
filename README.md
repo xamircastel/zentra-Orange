@@ -1,4 +1,4 @@
-# 🍊 Orange Design System - Mobile App
+# 🍊 Zentra Orange - Mobile App
 
 Una aplicación móvil moderna construida con Orange Design System, featuring un sistema completo de puntos, navegación lateral y modales interactivos.
 
@@ -80,7 +80,7 @@ Luego visita: `http://localhost:8080`
 ## 📁 Estructura del Proyecto
 
 ```
-orange-app-design/
+zentra-Orange/
 ├── index.html                 # Aplicación principal
 ├── styles.css                 # Estilos completos
 ├── assets/                    # Recursos estáticos
@@ -95,8 +95,8 @@ orange-app-design/
 
 1. **Clonar el repositorio**:
 ```bash
-git clone https://github.com/tu-usuario/orange-design-mobile-app.git
-cd orange-design-mobile-app
+git clone https://github.com/tu-usuario/zentra-Orange.git
+cd zentra-Orange
 ```
 
 2. **Abrir con servidor local**:
