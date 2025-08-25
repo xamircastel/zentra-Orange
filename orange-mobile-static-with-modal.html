@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange Design System - Mobile App with Subscription Modal</title>
+    <style>
+        /* Estilos basados en Orange Design System */
+        :root {
+            --ods-orange-100: #ff7900;
+            --ods-orange-200: #ff9533;
+            --ods-orange-300: #ffb366;
+            --ods-white-100: #fff;
+            --ods-black-900: #000;
+            --ods-gray-200: #eee;
+            --spacing-unit: 8px;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: var(--ods-gray-200);
+            color: var(--ods-black-900);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+            width: 375px;
+            height: 812px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .app-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--ods-black-900);
+            padding: 40px 20px 8px;
+            height: 85px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .orange-logo {
+            width: 28px;
+            height: 28px;
+            background: var(--ods-orange-100);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            color: white;
+        }
+
+        .greeting-text {
+            color: var(--ods-white-100);
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .points-section {
+            text-align: right;
+        }
+
+        .points-text {
+            color: var(--ods-white-100);
+            font-size: 12px;
+            margin-bottom: 2px;
+        }
+
+        .level-badge {
+            background: var(--ods-orange-100);
+            color: var(--ods-white-100);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 20px;
+            padding: 8px 16px;
+            margin-top: 8px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            margin: 0 8px;
+        }
+
+        .search-icon, .filter-icon {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .progress-container {
+            background: rgba(255, 255, 255, 0.2);
+            height: 4px;
+            border-radius: 2px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--ods-orange-100), var(--ods-orange-200));
+            border-radius: 2px;
+            width: 35%;
+            position: relative;
+            transition: width 0.8s ease-out;
+        }
+
+        /* Main Content */
+        .app-content {
+            padding-top: 85px;
+            padding-bottom: 80px;
+            height: 100vh;
+            overflow-y: auto;
+            background: var(--ods-black-900);
+        }
+
+        .hero-banner {
+            position: relative;
+            margin: 0 20px 20px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .banner-indicators {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .indicator.active {
+            background: white;
+        }
+
+        .content-section {
+            margin-bottom: 24px;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            color: var(--ods-white-100);
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .category-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .category-card {
+            text-decoration: none;
+            text-align: center;
+            color: var(--ods-white-100);
+        }
+
+        .category-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            margin: 0 auto 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .category-name {
+            font-size: 12px;
+        }
+
+        /* Modal de Suscripción Orange */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .modal-container {
+            background: white;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 320px;
+            max-height: 85vh;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-hero {
+            position: relative;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image-container svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .modal-content {
+            padding: 24px;
+            flex: 1;
+        }
+
+        .modal-title {
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 0 20px 0;
+            line-height: 1.3;
+        }
+
+        .modal-benefits {
+            margin-bottom: 20px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .benefit-icon {
+            font-size: 16px;
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .benefit-item strong {
+            color: var(--ods-orange-100);
+            font-weight: bold;
+        }
+
+        .terms-checkbox {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .checkbox-input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            font-size: 12px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .checkmark {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+            margin-top: 1px;
+            flex-shrink: 0;
+            position: relative;
+            transition: all 0.2s ease;
+            background: var(--ods-orange-100);
+            border-color: var(--ods-orange-100);
+        }
+
+        .checkmark::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .terms-text {
+            flex: 1;
+        }
+
+        .terms-link {
+            color: var(--ods-orange-100);
+            text-decoration: underline;
+        }
+
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .phone-input {
+            width: 100%;
+            padding: 14px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .register-btn {
+            background: linear-gradient(135deg, var(--ods-orange-100) 0%, var(--ods-orange-200) 100%);
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 4px;
+        }
+
+        .cancel-btn,
+        .login-btn {
+            background: transparent;
+            color: #666;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .login-btn {
+            color: var(--ods-orange-100);
+            font-weight: 600;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 375px;
+            background: var(--ods-white-100);
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px;
+            text-decoration: none;
+        }
+
+        .nav-item.active svg path {
+            fill: var(--ods-orange-100);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Orange -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="orange-logo">O</div>
+                <span class="greeting-text">Hola, Raquel</span>
+            </div>
+            <div class="points-section">
+                <div class="points-text">1,350 puntos</div>
+                <div class="level-badge">FAN</div>
+            </div>
+        </div>
+        <div class="search-bar">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z" fill="#666"/>
+            </svg>
+            <input type="text" placeholder="Buscar contenidos...">
+            <svg class="filter-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 18H14V16H10V18ZM3 6V8H21V6H3ZM6 13H18V11H6V13Z" fill="#666"/>
+            </svg>
+        </div>
+        <div class="progress-container">
+            <div class="progress-fill"></div>
+        </div>
+    </header>
+
+    <main class="app-content">
+        <!-- Banner principal -->
+        <section class="hero-banner">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzc1IiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9Im9yYW5nZUdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZjc5MDAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZjk5MDAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI29yYW5nZUdyYWQpIi8+PGNpcmNsZSBjeD0iMTAwIiBjeT0iNzUiIHI9IjMwIiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuMiIvPjxjaXJjbGUgY3g9IjI3NSIgY3k9IjQwIiByPSIyMCIgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjE1Ii8+PHRleHQgeD0iNTAlIiB5PSI0NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5PUkFOR0UgQVBQPC90ZXh0Pjx0ZXh0IHg9IjUwJSIgeT0iNjUlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Uw7UgZXhwZXJpZW5jaWEgZGlnaXRhbDwvdGV4dD48L3N2Zz4=" alt="Orange App">
+            <div class="banner-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </section>
+
+        <!-- Sección Descubre -->
+        <section class="content-section">
+            <h2 class="section-title">Descubre</h2>
+            <div class="category-cards">
+                <a href="#" class="category-card">
+                    <div class="category-icon" style="background-color: #FF7900;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 6H3C1.9 6 1 6.9 1 8V16C1 17.1 1.9 18 3 18H21C22.1 18 23 17.1 23 16V8C23 6.9 22.1 6 21 6ZM21 16H3V8H21V16ZM6 15H8V13H10V11H8V9H6V11H4V13H6V15Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <span class="category-name">Juegos</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-icon" style="background-color: #4170D8;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 3C7.03 3 3 7.03 3 12C3 16.97 7.03 21 12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3ZM12 19C8.14 19 5 15.86 5 12C5 8.14 8.14 5 12 5C15.86 5 19 8.14 19 12C19 15.86 15.86 19 12 19ZM10 17L15 12L10 7V17Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <span class="category-name">Música</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-icon" style="background-color: #9373BD;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.23 6C9.57 6 8.01 6.66 6.87 7.73C6.54 6.73 5.61 6 4.5 6C3.12 6 2 7.12 2 8.5C2 9.88 3.12 11 4.5 11C4.71 11 4.91 10.97 5.11 10.92C5.06 11.27 5 11.63 5 12C5 15.31 7.69 18 11 18C14.31 18 17 15.31 17 12C17 8.69 14.31 6 11.23 6ZM4.5 9C4.22 9 4 8.78 4 8.5C4 8.22 4.22 8 4.5 8C4.78 8 5 8.22 5 8.5C5 8.78 4.78 9 4.5 9ZM11 16C8.79 16 7 14.21 7 12C7 9.79 8.79 8 11 8C13.21 8 15 9.79 15 12C15 14.21 13.21 16 11 16ZM18.5 11C17.12 11 16 12.12 16 13.5C16 14.88 17.12 16 18.5 16C19.88 16 21 14.88 21 13.5C21 12.12 19.88 11 18.5 11ZM18.5 14C18.22 14 18 13.78 18 13.5C18 13.22 18.22 13 18.5 13C18.78 13 19 13.22 19 13.5C19 13.78 18.78 14 18.5 14Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <span class="category-name">Sports</span>
+                </a>
+                <a href="#" class="category-card">
+                    <div class="category-icon" style="background-color: #333333;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <span class="category-name">Videos</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Suscripción Orange - Mostrado -->
+    <div class="modal-overlay">
+        <div class="modal-container">
+            <!-- Imagen de superhéroe -->
+            <div class="modal-hero">
+                <div class="hero-image-container">
+                    <svg width="320" height="180" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="heroGradStatic" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ff7900"/>
+                                <stop offset="50%" stop-color="#ff9533"/>
+                                <stop offset="100%" stop-color="#ffb366"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#heroGradStatic)"/>
+                        <circle cx="80" cy="90" r="30" fill="#ffffff" fill-opacity="0.1"/>
+                        <circle cx="240" cy="50" r="20" fill="#ffffff" fill-opacity="0.1"/>
+                        <circle cx="280" cy="130" r="25" fill="#ffffff" fill-opacity="0.08"/>
+                        <text x="50%" y="35%" font-family="Arial" font-size="40" font-weight="bold" fill="#ffffff" text-anchor="middle" dy=".3em">🦸</text>
+                        <text x="50%" y="60%" font-family="Arial" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle" dy=".3em">SUPERHEROES - ORANGE APP</text>
+                        <text x="50%" y="75%" font-family="Arial" font-size="14" fill="#ffffff" text-anchor="middle" dy=".3em">Desbloquea superpoderes ilimitados</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Contenido del modal -->
+            <div class="modal-content">
+                <h2 class="modal-title">Suscríbete al portal de contenidos de Orange</h2>
+                
+                <div class="modal-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✨</span>
+                        <span>Decenas de contenidos para consumir sin límites</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🎮</span>
+                        <span>Pruébalo 7 días gratis</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">💰</span>
+                        <span>Después <strong>0,5€/semana</strong> (Iva incluido)</span>
+                    </div>
+                </div>
+
+                <!-- Checkbox de términos -->
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="acceptTerms" class="checkbox-input" checked>
+                    <label for="acceptTerms" class="checkbox-label">
+                        <span class="checkmark"></span>
+                        <span class="terms-text">
+                            Acepto los <a href="#" class="terms-link">términos y condiciones del servicio</a>
+                        </span>
+                    </label>
+                </div>
+
+                <!-- Formulario -->
+                <div class="modal-form">
+                    <div class="input-group">
+                        <input type="tel" placeholder="Número de Teléfono" class="phone-input" value="+34 123 456 789">
+                    </div>
+                    
+                    <button class="register-btn">
+                        Regístrate
+                    </button>
+                    
+                    <button class="cancel-btn">
+                        Cancelar
+                    </button>
+                    
+                    <button class="login-btn">
+                        Iniciar Sesión
+                    </button>
+                </div>
+            </div>
+
+            <!-- Botón de cerrar -->
+            <button class="modal-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#666"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navegación inferior -->
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z" fill="#FF7900"/>
+            </svg>
+        </a>
+        <a href="#" class="nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z" fill="#333333"/>
+            </svg>
+        </a>
+        <a href="#" class="nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.5 3C19.54 3 22 5.46 22 8.5C22 11.54 19.54 14 16.5 14C15.24 14 14.08 13.59 13.15 12.88L7.59 18.43C7.84 19.08 7.7 19.85 7.18 20.37L5.06 22.49C4.67 22.88 4 22.88 3.61 22.49L1.51 20.38C1.12 19.99 1.12 19.32 1.51 18.93L3.63 16.82C4.15 16.3 4.92 16.16 5.57 16.41L11.12 10.85C10.41 9.92 10 8.76 10 7.5C10 4.46 12.46 2 15.5 2H16.5V3ZM16.5 12C18.43 12 20 10.43 20 8.5C20 6.57 18.43 5 16.5 5C14.57 5 13 6.57 13 8.5C13 10.43 14.57 12 16.5 12ZM5 17.5L2.5 20L4 21.5L6.5 19L5 17.5Z" fill="#333333"/>
+            </svg>
+        </a>
+        <a href="#" class="nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 18C15.89 18 15 18.89 15 20C15 21.11 15.89 22 17 22C18.11 22 19 21.11 19 20C19 18.89 18.11 18 17 18ZM1 2V4H3L6.6 11.59L5.25 14.04C5.09 14.32 5 14.65 5 15C5 16.11 5.89 17 7 17H19V15H7.42C7.28 15 7.17 14.89 7.17 14.75C7.17 14.7 7.18 14.66 7.2 14.63L8.1 13H15.55C16.3 13 16.96 12.59 17.3 11.97L20.88 5.5C20.96 5.34 21 5.17 21 5C21 4.45 20.55 4 20 4H5.21L4.27 2H1ZM7 18C5.89 18 5 18.89 5 20C5 21.11 5.89 22 7 22C8.11 22 9 21.11 9 20C9 18.89 8.11 18 7 18Z" fill="#333333"/>
+            </svg>
+        </a>
+        <a href="#" class="nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z" fill="#333333"/>
+            </svg>
+        </a>
+    </nav>
+</body>
+</html>

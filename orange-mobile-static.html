@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange Design System - Mobile App</title>
+    <style>
+        /* Estilos basados en Orange Design System */
+        :root {
+            --ods-orange-100: #ff7900;
+            --ods-orange-200: #f16e00;
+            --ods-white-100: #fff;
+            --ods-black-900: #000;
+            --ods-gray-200: #eee;
+            --spacing-unit: 8px;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: var(--ods-gray-200);
+            color: var(--ods-black-900);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+            width: 375px;
+            height: 812px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .app-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background-color: #000000;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            height: 120px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing-sm) var(--spacing-md);
+            height: 44px;
+        }
+
+        .orange-logo {
+            width: 32px;
+            height: 32px;
+            background: #ff7900;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .user-greeting {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        /* Points Section */
+        .points-section {
+            padding: var(--spacing-xs) var(--spacing-md) var(--spacing-xs);
+        }
+
+        .points-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .points-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .points-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #ff7900 0%, #ffb366 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(255, 121, 0, 0.3);
+        }
+
+        .points-text {
+            font-size: 14px;
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .level-badge {
+            background: linear-gradient(135deg, #ff7900 0%, #ff9533 100%);
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 6px rgba(255, 121, 0, 0.3);
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 35%;
+            background: linear-gradient(90deg, #ff7900 0%, #ff9533 50%, #ffb366 100%);
+            border-radius: 4px;
+            position: relative;
+            box-shadow: 0 0 12px rgba(255, 121, 0, 0.6);
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-md);
+            padding: 10px var(--spacing-md);
+            margin: 0 var(--spacing-md) var(--spacing-sm);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .search-icon {
+            width: 18px;
+            height: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            margin-right: 12px;
+            border-radius: 2px;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            background: none;
+            font-size: 14px;
+            outline: none;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .filter-button {
+            width: 18px;
+            height: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 2px;
+        }
+
+        /* Main Content */
+        .app-content {
+            padding-top: 120px;
+            height: 100%;
+        }
+
+        /* Banner */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, #ff7900 0%, #ff9533 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .banner-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .banner-subtitle {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .banner-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .indicator.active {
+            background: #ffffff;
+        }
+
+        /* Content sections */
+        .content-section {
+            padding: 20px 16px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        .category-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .category-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .category-name {
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="orange-logo"></div>
+            <div class="user-greeting">Hola, Raquel</div>
+        </div>
+        
+        <!-- Points Section -->
+        <div class="points-section">
+            <div class="points-info">
+                <div class="points-container">
+                    <div class="points-icon">★</div>
+                    <span class="points-text">1350 puntos</span>
+                </div>
+                <span class="level-badge">FAN</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+        
+        <div class="search-bar">
+            <div class="search-icon"></div>
+            <input type="text" class="search-input" placeholder="Busca o pregunta algo...">
+            <div class="filter-button"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="app-content">
+        <!-- Banner -->
+        <section class="hero-banner">
+            <div class="banner-title">ORANGE APP</div>
+            <div class="banner-subtitle">Tu experiencia digital</div>
+            <div class="banner-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="content-section">
+            <h2 class="section-title">Descubre</h2>
+            <div class="category-cards">
+                <div class="category-card">
+                    <div class="category-icon" style="background-color: #FF7900;">🎮</div>
+                    <span class="category-name">Juegos</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon" style="background-color: #4170D8;">📱</div>
+                    <span class="category-name">Apps</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon" style="background-color: #50BE87;">🎵</div>
+                    <span class="category-name">Música</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon" style="background-color: #A885D8;">📺</div>
+                    <span class="category-name">Videos</span>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

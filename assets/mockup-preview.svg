@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Mobile Phone Frame -->
+    <rect x="150" y="50" width="300" height="500" rx="30" fill="#141414"/>
+    <rect x="160" y="60" width="280" height="480" rx="25" fill="#ffffff"/>
+    
+    <!-- Header -->
+    <rect x="160" y="60" width="280" height="48" fill="#ffffff"/>
+    <path d="M190 84L180 84L180 74" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="210" y="78" width="180" height="12" rx="6" fill="#EEEEEE"/>
+    <circle cx="410" cy="84" r="10" fill="#EEEEEE"/>
+    
+    <!-- Search Bar -->
+    <rect x="175" y="118" width="250" height="36" rx="4" fill="#EEEEEE"/>
+    <circle cx="195" cy="136" r="8" fill="#999999"/>
+    <line x1="200" y1="136" x2="385" y2="136" stroke="#999999" stroke-width="2"/>
+    <circle cx="405" cy="136" r="8" fill="#999999"/>
+    
+    <!-- Hero Banner -->
+    <rect x="160" y="164" width="280" height="150" fill="#ff7900"/>
+    <text x="300" y="240" font-family="Arial" font-size="24" fill="white" text-anchor="middle">PROMO</text>
+    <circle cx="290" cy="294" r="4" fill="white"/>
+    <circle cx="300" cy="294" r="4" fill="white" fill-opacity="0.5"/>
+    <circle cx="310" cy="294" r="4" fill="white" fill-opacity="0.5"/>
+    
+    <!-- Section Title -->
+    <text x="185" y="344" font-family="Arial" font-size="18" font-weight="bold" fill="#333333">• Categorías</text>
+    
+    <!-- Category Cards -->
+    <g>
+        <rect x="170" y="354" width="64" height="64" rx="8" fill="#4bb4e6"/>
+        <text x="202" y="386" font-family="Arial" font-size="24" fill="white" text-anchor="middle">M</text>
+        <text x="202" y="434" font-family="Arial" font-size="14" fill="#333333" text-anchor="middle">Móvil</text>
+    </g>
+    <g>
+        <rect x="244" y="354" width="64" height="64" rx="8" fill="#50be87"/>
+        <text x="276" y="386" font-family="Arial" font-size="24" fill="white" text-anchor="middle">F</text>
+        <text x="276" y="434" font-family="Arial" font-size="14" fill="#333333" text-anchor="middle">Fibra</text>
+    </g>
+    <g>
+        <rect x="318" y="354" width="64" height="64" rx="8" fill="#a885d8"/>
+        <text x="350" y="386" font-family="Arial" font-size="24" fill="white" text-anchor="middle">TV</text>
+        <text x="350" y="434" font-family="Arial" font-size="14" fill="#333333" text-anchor="middle">TV</text>
+    </g>
+    
+    <!-- Section Title -->
+    <text x="185" y="484" font-family="Arial" font-size="18" font-weight="bold" fill="#333333">• Recomendados</text>
+    <text x="415" y="484" font-family="Arial" font-size="14" fill="#ff7900" text-anchor="end">Ver más</text>
+    
+    <!-- Navigation Bar -->
+    <rect x="160" y="520" width="280" height="56" fill="#ffffff"/>
+    <circle cx="200" cy="548" r="12" fill="#ff7900"/>
+    <circle cx="260" cy="548" r="12" fill="#333333"/>
+    <circle cx="320" cy="548" r="12" fill="#333333"/>
+    <circle cx="380" cy="548" r="12" fill="#333333"/>
+</svg>

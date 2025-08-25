@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150px" height="150px" viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Orange Logo</title>
+    <g id="Orange-Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Background" fill="#FF7900" x="0" y="0" width="150" height="150" rx="30"></rect>
+        <path d="M75,40 C93.7776815,40 109,55.2223185 109,74 C109,92.7776815 93.7776815,108 75,108 C56.2223185,108 41,92.7776815 41,74 C41,55.2223185 56.2223185,40 75,40 Z M75,52 C62.8497355,52 53,61.8497355 53,74 C53,86.1502645 62.8497355,96 75,96 C87.1502645,96 97,86.1502645 97,74 C97,61.8497355 87.1502645,52 75,52 Z" id="Orange-Symbol" fill="#FFFFFF"></path>
+    </g>
+</svg>
