@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zentra MCSP Mock</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <div class="header-left">
+          <img class="brand-logo" src="Orange_logo.svg" alt="Orange" />
+        </div>
+        <button
+          type="button"
+          class="user-status-badge"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+          aria-controls="loyalty-panel-card"
+          aria-label="Ver progreso: 100 puntos acumulados, nivel Bronce"
+        >
+          <span class="user-status-badge__points">
+            <span class="user-status-badge__value">100</span>
+            <span class="user-status-badge__coins" aria-hidden="true"></span>
+          </span>
+          <span class="user-status-badge__level">
+            <span class="user-status-badge__level-dot" aria-hidden="true"></span>
+            <span class="user-status-badge__level-label">Bronce</span>
+          </span>
+        </button>
+      </header>
+
+      <div class="loyalty-panel" id="loyalty-panel" aria-hidden="true">
+        <div class="loyalty-panel__overlay" data-action="close-loyalty" aria-hidden="true"></div>
+        <section
+          class="loyalty-panel__card"
+          id="loyalty-panel-card"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="loyalty-panel-title"
+          aria-describedby="loyalty-panel-description"
+          tabindex="-1"
+        >
+          <header class="loyalty-panel__header">
+            <h2 id="loyalty-panel-title">Mi Progreso</h2>
+            <button
+              type="button"
+              class="icon-button loyalty-panel__close"
+              data-action="close-loyalty"
+              aria-label="Cerrar resumen de puntos"
+            >
+              <span class="icon icon-close"></span>
+            </button>
+          </header>
+          <div class="loyalty-panel__divider" aria-hidden="true"></div>
+          <div class="loyalty-panel__content">
+            <div class="loyalty-progress" aria-hidden="true">
+              <div class="loyalty-progress__ring">
+                <div class="loyalty-progress__chart" data-progress="40" style="--progress: 40">
+                  <span class="loyalty-progress__percentage">40%</span>
+                </div>
+                <span class="loyalty-progress__label">Bronce</span>
+              </div>
+            </div>
+            <div class="loyalty-summary">
+              <p class="loyalty-summary__points"><strong>100</strong> puntos acumulados</p>
+              <p class="loyalty-summary__next" id="loyalty-panel-description">
+                Faltan <strong>150</strong> puntos para nivel Silver
+              </p>
+              <h3 class="loyalty-summary__subtitle">Beneficios actuales:</h3>
+              <ul class="loyalty-summary__list">
+                <li>Descuentos hasta 5%</li>
+                <li>Acceso a contenido básico</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+  <div class="profile-panel" id="profile-panel" inert>
+        <div class="profile-panel__overlay" data-action="close-profile" aria-hidden="true"></div>
+        <section
+          class="profile-panel__card"
+          id="profile-panel-card"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="profile-panel-title"
+          tabindex="-1"
+        >
+          <header class="profile-panel__header">
+            <div>
+              <h2 class="profile-panel__title" id="profile-panel-title">Mi perfil</h2>
+              <p class="profile-panel__subtitle">Gestiona tus datos y consulta tu progreso</p>
+            </div>
+            <button
+              type="button"
+              class="icon-button profile-panel__close"
+              data-action="close-profile"
+              aria-label="Cerrar menú de perfil"
+            >
+              <span class="icon icon-close"></span>
+            </button>
+          </header>
+
+          <div class="profile-panel__content">
+            <section class="profile-panel__section">
+              <header class="profile-panel__section-header">
+                <div class="profile-panel__section-icon" aria-hidden="true">
+                  <span class="icon icon-user"></span>
+                </div>
+                <div>
+                  <p class="profile-panel__section-title">Información personal</p>
+                  <p class="profile-panel__section-caption">Personaliza cómo te contactamos</p>
+                </div>
+              </header>
+              <dl class="profile-details">
+                <div class="profile-details__row">
+                  <dt>Nombre</dt>
+                  <dd>Patricio</dd>
+                </div>
+                <div class="profile-details__row">
+                  <dt>Apellidos</dt>
+                  <dd>Mayor</dd>
+                </div>
+                <div class="profile-details__row">
+                  <dt>Email</dt>
+                  <dd>
+                    pato.mayor@dominio.com
+                    <span class="profile-details__status" role="status">Email pendiente de confirmación</span>
+                  </dd>
+                </div>
+                <div class="profile-details__row">
+                  <dt>Teléfono</dt>
+                  <dd>600000001</dd>
+                </div>
+                <div class="profile-details__row">
+                  <dt>Puntos</dt>
+                  <dd>100</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="profile-panel__section">
+              <header class="profile-panel__section-header">
+                <div class="profile-panel__section-icon profile-panel__section-icon--badge" aria-hidden="true">
+                  <span class="icon icon-trophy"></span>
+                </div>
+                <div>
+                  <p class="profile-panel__section-title">Mi progreso en gamificación</p>
+                  <p class="profile-panel__section-caption">¡Excelente inicio! Sigue acumulando puntos</p>
+                </div>
+              </header>
+
+              <div class="profile-level-card" aria-live="polite">
+                <div class="profile-level-card__info">
+                  <p class="profile-level-card__label">Nivel Bronce</p>
+                  <p class="profile-level-card__message">¡Excelente inicio! Sigue acumulando puntos</p>
+                </div>
+                <p class="profile-level-card__points">
+                  <span class="profile-level-card__points-value">100</span>
+                  <span class="profile-level-card__points-unit">puntos</span>
+                </p>
+              </div>
+
+              <div class="profile-progress" role="group" aria-labelledby="profile-progress-title">
+                <div class="profile-progress__header">
+                  <p id="profile-progress-title">Progreso hacia Plata</p>
+                  <p>100 / 250</p>
+                </div>
+                <div
+                  class="profile-progress__bar"
+                  role="progressbar"
+                  aria-valuemin="0"
+                  aria-valuemax="250"
+                  aria-valuenow="100"
+                  aria-valuetext="40% completado"
+                >
+                  <span style="width: 40%"></span>
+                </div>
+                <p class="profile-progress__hint">
+                  Faltan <strong>150 puntos</strong> para alcanzar el siguiente nivel
+                </p>
+              </div>
+
+              <div class="profile-benefits">
+                <p class="profile-benefits__title">Beneficios de tu nivel actual</p>
+                <ul class="profile-benefits__grid">
+                  <li class="profile-benefits__item">
+                    <span class="profile-benefits__icon" aria-hidden="true">%</span>
+                    <p class="profile-benefits__label">Descuentos hasta 5%</p>
+                  </li>
+                  <li class="profile-benefits__item">
+                    <span class="profile-benefits__icon" aria-hidden="true">▶</span>
+                    <p class="profile-benefits__label">Contenido básico</p>
+                  </li>
+                  <li class="profile-benefits__item">
+                    <span class="profile-benefits__icon" aria-hidden="true">🎟️</span>
+                    <p class="profile-benefits__label">1 boleto gratis/mes</p>
+                    <span class="profile-benefits__tag">Plata</span>
+                  </li>
+                  <li class="profile-benefits__item profile-benefits__item--disabled">
+                    <span class="profile-benefits__icon" aria-hidden="true">⭐</span>
+                    <p class="profile-benefits__label">Descuentos hasta 15%</p>
+                    <span class="profile-benefits__tag">Oro</span>
+                  </li>
+                  <li class="profile-benefits__item profile-benefits__item--disabled">
+                    <span class="profile-benefits__icon" aria-hidden="true">🔒</span>
+                    <p class="profile-benefits__label">Acceso VIP</p>
+                    <span class="profile-benefits__tag">Oro</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="profile-trajectory">
+                <p class="profile-trajectory__title">Tu trayectoria</p>
+                <ol class="profile-trajectory__list">
+                  <li class="profile-trajectory__item is-current">
+                    <span class="profile-trajectory__badge" aria-hidden="true">🥉</span>
+                    <div>
+                      <p class="profile-trajectory__level">Nivel Bronce</p>
+                      <p class="profile-trajectory__details">Alcanzado • 100 puntos actuales</p>
+                    </div>
+                  </li>
+                  <li class="profile-trajectory__item">
+                    <span class="profile-trajectory__badge" aria-hidden="true">🥈</span>
+                    <div>
+                      <p class="profile-trajectory__level">Nivel Plata</p>
+                      <p class="profile-trajectory__details">Próximo objetivo • 250 puntos (faltan 150)</p>
+                    </div>
+                  </li>
+                  <li class="profile-trajectory__item">
+                    <span class="profile-trajectory__badge" aria-hidden="true">🥇</span>
+                    <div>
+                      <p class="profile-trajectory__level">Nivel Oro</p>
+                      <p class="profile-trajectory__details">Objetivo futuro • 500 puntos (faltan 400)</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+
+  <div class="menu-drawer" id="menu-drawer" inert>
+        <aside
+          class="menu-drawer__panel"
+          id="menu-drawer-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="menu-drawer-title"
+          tabindex="-1"
+        >
+          <header class="menu-drawer__header">
+            <div class="menu-drawer__brand">
+              <span class="menu-drawer__brand-dot" aria-hidden="true"></span>
+              <span class="menu-drawer__brand-title" id="menu-drawer-title">Zentra</span>
+            </div>
+            <button
+              type="button"
+              class="icon-button menu-drawer__close"
+              data-action="close-menu"
+              aria-label="Cerrar menú de navegación"
+            >
+              <span class="icon icon-close"></span>
+            </button>
+          </header>
+          <p class="menu-drawer__caption">Categorías</p>
+          <nav class="menu-drawer__nav" aria-label="Categorías principales">
+            <button class="menu-drawer__item" data-menu="home">
+              <span class="menu-drawer__item-icon icon icon-home"></span>
+              <span class="menu-drawer__item-label">Inicio</span>
+              <span class="menu-drawer__item-chevron icon icon-chevron"></span>
+            </button>
+            <button class="menu-drawer__item" data-menu="games">
+              <span class="menu-drawer__item-icon icon icon-games"></span>
+              <span class="menu-drawer__item-label">Juegos</span>
+              <span class="menu-drawer__item-chevron icon icon-chevron"></span>
+            </button>
+            <button class="menu-drawer__item" data-menu="music">
+              <span class="menu-drawer__item-icon icon icon-music"></span>
+              <span class="menu-drawer__item-label">Música</span>
+              <span class="menu-drawer__item-chevron icon icon-chevron"></span>
+            </button>
+            <button class="menu-drawer__item" data-menu="sports">
+              <span class="menu-drawer__item-icon icon icon-sports"></span>
+              <span class="menu-drawer__item-label">Deportes y noticias</span>
+              <span class="menu-drawer__item-chevron icon icon-chevron"></span>
+            </button>
+            <button class="menu-drawer__item" data-menu="videos">
+              <span class="menu-drawer__item-icon icon icon-video"></span>
+              <span class="menu-drawer__item-label">Vídeos</span>
+              <span class="menu-drawer__item-chevron icon icon-chevron"></span>
+            </button>
+            <button class="menu-drawer__item" data-menu="books">
+              <span class="menu-drawer__item-icon icon icon-book"></span>
+              <span class="menu-drawer__item-label">Libros</span>
+              <span class="menu-drawer__item-chevron icon icon-chevron"></span>
+            </button>
+            <button class="menu-drawer__item" data-menu="promotions">
+              <span class="menu-drawer__item-icon icon icon-promo"></span>
+              <span class="menu-drawer__item-label">Canje de puntos</span>
+              <span class="menu-drawer__item-chevron icon icon-chevron"></span>
+            </button>
+            <button class="menu-drawer__item" data-menu="packs">
+              <span class="menu-drawer__item-icon icon icon-pack"></span>
+              <span class="menu-drawer__item-label">Paquetes</span>
+              <span class="menu-drawer__item-chevron icon icon-chevron"></span>
+            </button>
+            <button class="menu-drawer__item" data-menu="offers">
+              <span class="menu-drawer__item-icon icon icon-offer"></span>
+              <span class="menu-drawer__item-label">Ofertas</span>
+              <span class="menu-drawer__item-chevron icon icon-chevron"></span>
+            </button>
+            <button class="menu-drawer__item" data-menu="faqs">
+              <span class="menu-drawer__item-icon icon icon-faq"></span>
+              <span class="menu-drawer__item-label">Preguntas frecuentes</span>
+              <span class="menu-drawer__item-chevron icon icon-chevron"></span>
+            </button>
+            <button class="menu-drawer__item" data-menu="contact">
+              <span class="menu-drawer__item-icon icon icon-contact"></span>
+              <span class="menu-drawer__item-label">Contacto</span>
+              <span class="menu-drawer__item-chevron icon icon-chevron"></span>
+            </button>
+          </nav>
+        </aside>
+        <div class="menu-drawer__overlay" data-action="close-menu" aria-hidden="true"></div>
+      </div>
+
+      <main id="main-content" class="main-content" role="main"></main>
+
+      <footer class="app-footer">
+        <nav class="footer-links" aria-label="Información legal">
+          <a href="#" data-route="terms">Términos y condiciones</a>
+          <a href="#" data-route="privacy">Política de privacidad</a>
+          <a href="#" data-route="faqs">Preguntas frecuentes</a>
+          <a href="#" data-route="contact">Contacto</a>
+        </nav>
+      </footer>
+
+      <nav class="bottom-nav" aria-label="Navegación inferior">
+        <button class="bottom-nav__btn is-active" data-route="home">
+          <span class="icon icon-home"></span>
+          <span>Inicio</span>
+        </button>
+        <button
+          class="bottom-nav__btn"
+          data-route="discover"
+          data-action="open-menu"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+          aria-controls="menu-drawer-panel"
+        >
+          <span class="icon icon-menu"></span>
+          <span>Menu</span>
+        </button>
+        <button class="bottom-nav__btn" data-route="rewards">
+          <img class="bottom-nav__logo" src="Orange_logo.svg" alt="Orange" />
+        </button>
+        <button
+          class="bottom-nav__btn bottom-nav__btn--search"
+          data-route="search"
+          data-action="toggle-search"
+          aria-haspopup="search"
+          aria-expanded="false"
+          aria-label="Abrir buscador"
+          aria-controls="footer-search-panel"
+        >
+          <span class="icon icon-search"></span>
+          <span>Buscar</span>
+        </button>
+        <button
+          class="bottom-nav__btn"
+          data-route="profile"
+          data-action="open-profile"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+          aria-controls="profile-panel-card"
+        >
+          <span class="icon icon-user"></span>
+          <span>Perfil</span>
+        </button>
+      </nav>
+      <div class="footer-search" id="footer-search-panel" role="search" aria-hidden="true">
+        <span class="icon icon-search" aria-hidden="true"></span>
+        <input type="search" placeholder="Busca o pregunta algo..." />
+        <button type="button" class="footer-search__filters" aria-label="Filtros">
+          <span class="icon icon-filters"></span>
+        </button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

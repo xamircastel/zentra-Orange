@@ -1,0 +1,419 @@
+{
+  "home": {
+    "hero": [
+      {
+        "src": "ima1.jpg",
+        "alt": "Descubre las mejores experiencias Orange"
+      },
+      {
+        "src": "ima2.jpg",
+        "alt": "Beneficios exclusivos para clientes Orange"
+      },
+      {
+        "src": "ima3.jpg",
+        "alt": "Conéctate donde quieras con ofertas Orange"
+      }
+    ],
+    "discover": [
+      {
+        "id": "lectura",
+        "label": "Lectura",
+        "image": "https://pre-mcsp.zed.com/assets/books_discover.png"
+      },
+      {
+        "id": "musica",
+        "label": "Música",
+        "image": "https://pre-mcsp.zed.com/assets/music_discover.png"
+      },
+      {
+        "id": "deportes",
+        "label": "Deportes",
+        "image": "https://pre-mcsp.zed.com/assets/sports_discover.png"
+      },
+      {
+        "id": "videos",
+        "label": "Vídeos",
+        "image": "https://pre-mcsp.zed.com/assets/videos_discover.png"
+      },
+      {
+        "id": "juegos",
+        "label": "Juegos",
+        "image": "https://pre-mcsp.zed.com/assets/games_discover.png"
+      }
+    ],
+    "recommendations": [
+      {
+        "id": "ekomics",
+        "title": "E-Komics",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/118/113/P00017C02770007/ekomics%202%20(2)_320.png"
+      },
+      {
+        "id": "fit-life",
+        "title": "Fit Life",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/75/65/P00017C02770009/Pack%20fitlife_320_vs4_320.png"
+      },
+      {
+        "id": "television-consciente",
+        "title": "Televisión Consciente",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/69/105/P00017C02770015/consiusTVNew_320.jpg"
+      },
+      {
+        "id": "esportz365",
+        "title": "Esportz365",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/51/43/P00017C02770017/pack%20esportz365_320.png"
+      }
+    ],
+    "newsHighlights": [
+      {
+        "id": "lector-de-prensa",
+        "title": "Lector de prensa",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/74/50/P00017C02770030/press%20reader_320.png"
+      },
+      {
+        "id": "kokoro-kids",
+        "title": "Kokoro KIDS",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/106/101/P00017C02770014/kokoro%201_320.jpg"
+      },
+      {
+        "id": "nba-league-pass",
+        "title": "NBA League Pass",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/121/77/P00017C02770031/Product_NBA%20LEAGUE%20PASS_landscape_320.jpg"
+      },
+      {
+        "id": "essentia",
+        "title": "Essentia",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/85/72/P00017C02770037/essentia%202_320.jpg"
+      }
+    ],
+    "popular": [
+      {
+        "id": "conciertos-qello",
+        "title": "Conciertos Qello",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/54/43/P00017C02770032/quello%202_320.jpg"
+      },
+      {
+        "id": "fight-tv",
+        "title": "Fight TV",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/83/78/P00017C02771039/figh%20tv%202_320.jpg"
+      },
+      {
+        "id": "retro-gol",
+        "title": "RETRO GOL",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/100/83/P00017C02770039/RetroGol6_320.jpg"
+      },
+      {
+        "id": "television-consciente",
+        "title": "Televisión Consciente",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/69/105/P00017C02770015/consiusTVNew_320.jpg"
+      }
+    ],
+    "services": [
+      {
+        "label": "Salud",
+        "image": "https://pre-mcsp.zed.com/assets/salud.png"
+      },
+      {
+        "label": "Alarmas",
+        "image": "https://pre-mcsp.zed.com/assets/alarmas.png"
+      },
+      {
+        "label": "Seguros",
+        "image": "https://pre-mcsp.zed.com/assets/seguros.png"
+      },
+      {
+        "label": "Electricidad",
+        "image": "https://pre-mcsp.zed.com/assets/limpieza.png"
+      }
+    ]
+  },
+  "collections": {
+    "recommendations": [
+      {
+        "id": "ekomics",
+        "title": "E-Komics",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/118/113/P00017C02770007/ekomics%202%20(2)_320.png"
+      },
+      {
+        "id": "fit-life",
+        "title": "Fit Life",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/75/65/P00017C02770009/Pack%20fitlife_320_vs4_320.png"
+      },
+      {
+        "id": "television-consciente",
+        "title": "Televisión Consciente",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/69/105/P00017C02770015/consiusTVNew_320.jpg"
+      },
+      {
+        "id": "esportz365",
+        "title": "Esportz365",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/51/43/P00017C02770017/pack%20esportz365_320.png"
+      },
+      {
+        "id": "sportlocker",
+        "title": "Sportlocker",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/77/55/P00017C02770018/Pack%20sportlocker_320.png"
+      },
+      {
+        "id": "lector-de-prensa",
+        "title": "Lector de prensa",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/74/50/P00017C02770030/press%20reader_320.png"
+      },
+      {
+        "id": "busuu",
+        "title": "Busuu",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/76/77/P00017C02770033/Busuu_320.png"
+      },
+      {
+        "id": "superfunbox",
+        "title": "Superfunbox",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/52/121/P00017C02770034/Superfunbox_320.png"
+      },
+      {
+        "id": "smile-learn",
+        "title": "Smile & Learn",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/69/50/P00017C02770036/smile%20and%20leanr_320.jpg"
+      },
+      {
+        "id": "hoopers-life",
+        "title": "Hoopers Life",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/43/107/P00017C02770020/Pack%20hoopers_320.png"
+      }
+    ],
+    "news": [
+      {
+        "id": "lector-de-prensa",
+        "title": "Lector de prensa",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/74/50/P00017C02770030/press%20reader_320.png"
+      },
+      {
+        "id": "kokoro-kids",
+        "title": "Kokoro KIDS",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/106/101/P00017C02770014/kokoro%201_320.jpg"
+      },
+      {
+        "id": "nba-league-pass",
+        "title": "NBA League Pass",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/121/77/P00017C02770031/Product_NBA%20LEAGUE%20PASS_landscape_320.jpg"
+      },
+      {
+        "id": "essentia",
+        "title": "Essentia",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/85/72/P00017C02770037/essentia%202_320.jpg"
+      },
+      {
+        "id": "derbis-laliga",
+        "title": "Derbis de LaLiga",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/117/113/P00017C02770040/LaLigaDerbies_320.jpg"
+      },
+      {
+        "id": "sportlocker",
+        "title": "Sportlocker",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/77/55/P00017C02770018/Pack%20sportlocker_320.png"
+      },
+      {
+        "id": "footballers-lives",
+        "title": "Footballers Lives",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/48/115/P00017C02770019/Pack%20footballers_320.png"
+      },
+      {
+        "id": "hoopers-life",
+        "title": "Hoopers Life",
+        "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/43/107/P00017C02770020/Pack%20hoopers_320.png"
+      }
+    ]
+  },
+  "services": {
+    "state": "soon",
+    "illustration": "https://cdn4.zed.com/static/grap/Theme/Original/80/105/P00011C02770001/ilustracion-comingsoon.png"
+  },
+  "bundles": {
+    "ekomics": {
+      "id": "ekomics",
+      "name": "E-Komics",
+      "category": "Packs",
+      "price": "3.3€",
+      "heroImage": "https://cdn4.zed.com/static/grap/BundleItem/Converted/118/113/P00017C02770007/ekomics%202%20(2)_320.png",
+      "description": "Lecturas digitales exclusivas con funciones avanzadas como Super Motion y Super Zoom. Ideal para fans del cómic que buscan acceso ilimitado desde su móvil.",
+      "recommendations": ["ekomics", "fit-life", "television-consciente", "esportz365"],
+      "similar": [
+        {
+          "title": "Lectura digital",
+          "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/80/59/P00017C02770061/LECTURA%20DIGITAL_320.png"
+        },
+        {
+          "title": "Ven y disfruta",
+          "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/112/78/P00017C02770065/VEN%20Y%20DISFRUTA_320.png"
+        },
+        {
+          "title": "Lectura premium",
+          "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/62/64/P00017C02770067/LECTURA%20PREMIUM_320.png"
+        }
+      ]
+    },
+    "fit-life": {
+      "id": "fit-life",
+      "name": "Fit Life",
+      "category": "Packs",
+      "price": "3.3€",
+      "heroImage": "https://cdn4.zed.com/static/grap/BundleItem/Converted/75/65/P00017C02770009/Pack%20fitlife_320_vs4_320.png",
+      "description": "Clases on demand para activar tu bienestar físico y mental en casa. Entrenadores certificados, rutinas semanales y playlists motivadoras.",
+      "recommendations": ["ekomics", "fit-life", "television-consciente", "esportz365"],
+      "similar": [
+        {
+          "title": "Sports 4U",
+          "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/81/70/P00017C02770062/SPORTS%204U_320.png"
+        }
+      ]
+    },
+    "television-consciente": {
+      "id": "television-consciente",
+      "name": "Televisión Consciente",
+      "category": "Documentales",
+      "price": "2.9€",
+      "heroImage": "https://cdn4.zed.com/static/grap/BundleItem/Converted/69/105/P00017C02770015/consiusTVNew_320.jpg",
+      "description": "Selección curada de documentales y series sobre bienestar, sostenibilidad y desarrollo personal. Disfruta estrenos mensuales y contenido exclusivo.",
+      "recommendations": ["ekomics", "fit-life", "television-consciente", "esportz365"],
+      "similar": [
+        {
+          "title": "Mindful TV",
+          "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/88/90/P00017C02770068/MindfulTV_320.png"
+        }
+      ]
+    },
+    "esportz365": {
+      "id": "esportz365",
+      "name": "Esportz365",
+      "category": "Gaming",
+      "price": "2.5€",
+      "heroImage": "https://cdn4.zed.com/static/grap/BundleItem/Converted/51/43/P00017C02770017/pack%20esportz365_320.png",
+      "description": "Acceso a torneos, contenido exclusivo y noticias diarias del universo esports. Obtén recompensas adicionales jugando en Zentra.",
+      "recommendations": ["fit-life", "esportz365", "sportlocker", "hoopers-life"],
+      "similar": [
+        {
+          "title": "Gaming Arena",
+          "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/95/73/P00017C02770070/GamingArena_320.png"
+        }
+      ]
+    },
+    "sportlocker": {
+      "id": "sportlocker",
+      "name": "Sportlocker",
+      "category": "Deportes",
+      "price": "2.9€",
+      "heroImage": "https://cdn4.zed.com/static/grap/BundleItem/Converted/77/55/P00017C02770018/Pack%20sportlocker_320.png",
+      "description": "Entrenamientos premium, análisis de rendimiento y contenido exclusivo para fans de la vida activa. Incluye retos semanales con beneficios exclusivos.",
+      "recommendations": ["fit-life", "sportlocker", "hoopers-life", "fight-tv"],
+      "similar": [
+        {
+          "title": "Athletic Coach",
+          "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/86/92/P00017C02770071/AthleticCoach_320.png"
+        }
+      ]
+    },
+    "lector-de-prensa": {
+      "id": "lector-de-prensa",
+      "name": "Lector de prensa",
+      "category": "Noticias",
+      "price": "Incluido",
+      "heroImage": "https://cdn4.zed.com/static/grap/BundleItem/Converted/74/50/P00017C02770030/press%20reader_320.png",
+      "description": "Accede a periódicos y revistas internacionales sin coste adicional durante la fase promocional. Ideal para mantenerte informado al instante.",
+      "recommendations": ["lector-de-prensa", "essentia", "television-consciente", "ekomics"],
+      "similar": [
+        {
+          "title": "Noticias 360",
+          "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/93/105/P00017C02770072/Noticias360_320.png"
+        }
+      ]
+    },
+    "busuu": {
+      "id": "busuu",
+      "name": "Busuu",
+      "category": "Aprendizaje",
+      "price": "3.9€",
+      "heroImage": "https://cdn4.zed.com/static/grap/BundleItem/Converted/76/77/P00017C02770033/Busuu_320.png",
+      "description": "Cursos de idiomas colaborativos con feedback nativo y lecciones bite-sized. Incluye retos y actividades exclusivas.",
+      "recommendations": ["busuu", "superfunbox", "smile-learn", "ekomics"],
+      "similar": [
+        {
+          "title": "Language Lab",
+          "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/91/88/P00017C02770073/LanguageLab_320.png"
+        }
+      ]
+    },
+    "superfunbox": {
+      "id": "superfunbox",
+      "name": "Superfunbox",
+      "category": "Familia",
+      "price": "Incluido",
+      "heroImage": "https://cdn4.zed.com/static/grap/BundleItem/Converted/52/121/P00017C02770034/Superfunbox_320.png",
+      "description": "Caja digital de actividades para toda la familia: juegos, manualidades interactivas y retos colaborativos semanales.",
+      "recommendations": ["superfunbox", "smile-learn", "kokoro-kids", "hoopers-life"],
+      "similar": [
+        {
+          "title": "Family Play",
+          "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/87/95/P00017C02770074/FamilyPlay_320.png"
+        }
+      ]
+    },
+    "smile-learn": {
+      "id": "smile-learn",
+      "name": "Smile & Learn",
+      "category": "Educación",
+      "price": "2.5€",
+      "heroImage": "https://cdn4.zed.com/static/grap/BundleItem/Converted/69/50/P00017C02770036/smile%20and%20leanr_320.jpg",
+      "description": "Plataforma educativa infantil con contenidos STEAM gamificados y seguimiento para padres.",
+      "recommendations": ["smile-learn", "superfunbox", "kokoro-kids", "busuu"],
+      "similar": [
+        {
+          "title": "Kids Academy",
+          "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/90/94/P00017C02770075/KidsAcademy_320.png"
+        }
+      ]
+    },
+    "hoopers-life": {
+      "id": "hoopers-life",
+      "name": "Hoopers Life",
+      "category": "Deportes",
+      "price": "2.0€",
+      "heroImage": "https://cdn4.zed.com/static/grap/BundleItem/Converted/43/107/P00017C02770020/Pack%20hoopers_320.png",
+      "description": "Contenido exclusivo para amantes del baloncesto: documentales, entrevistas, entrenamientos y retos semanales.",
+      "recommendations": ["hoopers-life", "fight-tv", "sportlocker", "retro-gol"],
+      "similar": [
+        {
+          "title": "Basket Pro",
+          "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/92/96/P00017C02770076/BasketPro_320.png"
+        }
+      ]
+    },
+    "fight-tv": {
+      "id": "fight-tv",
+      "name": "Fight TV",
+      "category": "Deportes",
+      "price": "3.5€",
+      "heroImage": "https://cdn4.zed.com/static/grap/BundleItem/Converted/83/78/P00017C02771039/figh%20tv%202_320.jpg",
+      "description": "Canal dedicado a artes marciales, boxeo y MMA con eventos premium bajo demanda.",
+      "recommendations": ["fight-tv", "hoopers-life", "sportlocker", "retro-gol"],
+      "similar": [
+        {
+          "title": "Combat Arena",
+          "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/94/98/P00017C02770077/CombatArena_320.png"
+        }
+      ]
+    },
+    "retro-gol": {
+      "id": "retro-gol",
+      "name": "Retro Gol",
+      "category": "Deportes",
+      "price": "2.2€",
+      "heroImage": "https://cdn4.zed.com/static/grap/BundleItem/Converted/100/83/P00017C02770039/RetroGol6_320.jpg",
+      "description": "Revive los grandes partidos y figuras históricas del fútbol con archivos exclusivos y narrativas interactivas.",
+      "recommendations": ["retro-gol", "fight-tv", "hoopers-life", "television-consciente"],
+      "similar": [
+        {
+          "title": "Classic Matches",
+          "image": "https://cdn4.zed.com/static/grap/BundleItem/Converted/89/91/P00017C02770078/ClassicMatches_320.png"
+        }
+      ]
+    }
+  }
+}
